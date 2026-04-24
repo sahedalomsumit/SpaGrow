@@ -1,6 +1,7 @@
 # 🌿 SpaGrow - Premium Spa Website Redesign Worldwide
 
 [![CI/CD - Deploy to GitHub Pages](https://github.com/sahedalomsumit/spa-burn/actions/workflows/deploy.yml/badge.svg)](https://sahedalomsumit.github.io/spa-burn/)
+[![Netlify Status](https://img.shields.io/badge/Netlify-Deployed-00ADBB?style=flat&logo=netlify)](https://www.netlify.com/)
 
 SpaGrow is a high-end, minimalist landing page for **spa and wellness businesses worldwide**. Built with a "Soft UI Evolution" and "Sage & Stone" design system, it converts passive visitors into active bookings through professional storytelling and strategic UX.
 
@@ -8,7 +9,7 @@ SpaGrow is a high-end, minimalist landing page for **spa and wellness businesses
 
 ## ✨ Key Features
 
-- 🌍 **Multilingual Support**: Fully localized in English, German, and Italian using `i18next`.
+- ✨ **Premium UX**: High-end minimalist design with "Soft UI Evolution" and "Sage & Stone" design system.
 - 🎨 **Sage & Stone Design**: A curated, earthy palette with glassmorphism and modern typography for a premium feel.
 - 🎭 **Smooth Animations**: Powered by `Framer Motion` for high-performance scroll reveals and micro-interactions.
 - 📱 **Mobile-First UX**: Seamless browsing experience across all devices, prioritizing mobile booking.
@@ -26,7 +27,7 @@ SpaGrow is a high-end, minimalist landing page for **spa and wellness businesses
 | **Styling**      | Vanilla CSS (Soft UI System)                               |
 | **Animations**   | [Framer Motion](https://www.framer.com/motion/)            |
 | **Icons**        | [Lucide React](https://lucide.dev/)                        |
-| **Localization** | [i18next](https://www.i18next.com/)                        |
+| **Deployment**   | [GitHub Pages](https://pages.github.com/) & [Netlify](https://www.netlify.com/) |
 | **Storage**      | [SheetDB](https://sheetdb.io/) (Google Sheets Integration) |
 
 ---
@@ -83,9 +84,8 @@ spa-grow/
 ├── src/
 │   ├── assets/            # Images, icons, and blobs
 │   ├── components/        # Reusable UI components
-│   ├── i18n/              # Translation configuration (EN, DE, IT)
+│   ├── App.css            # Component-specific styles
 │   ├── App.jsx            # Main application entry
-│   ├── AppDe.jsx          # German version
 │   ├── index.css          # Design system and global styles
 │   └── main.jsx           # React mounting point
 ├── vite.config.js         # Vite configuration
