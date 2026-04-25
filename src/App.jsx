@@ -190,9 +190,14 @@ const Header = () => {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
             style={{
+              position: "absolute",
+              top: "100%",
+              left: 0,
+              right: 0,
               overflow: "hidden",
               background: "var(--bg)",
               borderBottom: "1px solid var(--stone)",
+              boxShadow: "var(--shadow-lg)",
             }}
             className="mobile-nav"
           >
@@ -201,7 +206,7 @@ const Header = () => {
                 padding: "20px 5vw 40px",
                 display: "flex",
                 flexDirection: "column",
-                gap: "24px",
+                gap: "0px",
               }}
             >
               {navLinks.map((link) => (
@@ -211,7 +216,10 @@ const Header = () => {
                   className={`nav-link ${
                     activeSection === link.href.substring(1) ? "active" : ""
                   }`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => {
+                    // Use a tiny delay to ensure the browser captures the click before the menu starts closing
+                    setTimeout(() => setIsOpen(false), 10);
+                  }}
                   style={{ fontSize: "1.2rem", width: "100%", display: "block" }}
                 >
                   {link.name}

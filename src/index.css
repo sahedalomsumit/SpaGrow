@@ -681,10 +681,6 @@ strong {
   }
 }
 
-.mobile-nav {
-  /* Let framer-motion handle visibility */
-}
-
 @media (max-width: 1024px) {
   .mobile-nav {
     display: block;
