@@ -178,7 +178,7 @@ const Header = () => {
         <div style={{ display: "flex", alignItems: "center", gap: "32px" }}>
           <nav className="desktop-nav" style={{ display: "flex", gap: "32px" }}>
             {navLinks.map((link) => (
-                <a
+              <a
                 key={link.name}
                 href={link.href}
                 onClick={(e) => scrollToSection(e, link.href)}
@@ -245,7 +245,11 @@ const Header = () => {
                     activeSection === link.href.substring(1) ? "active" : ""
                   }`}
                   onClick={(e) => scrollToSection(e, link.href)}
-                  style={{ fontSize: "1.2rem", width: "100%", display: "block" }}
+                  style={{
+                    fontSize: "1.2rem",
+                    width: "100%",
+                    display: "block",
+                  }}
                 >
                   {link.name}
                 </a>
@@ -1482,7 +1486,7 @@ const RecentProjects = () => (
         },
         {
           title: "Jenni Wellbeing",
-          category: "Wellness Studio • Switzerland",
+          category: "Wellness Studio • Bern, Switzerland",
           image: jenniImg,
           link: "https://sahedalomsumit.github.io/jenni-wellbeing.ch/",
           description:
