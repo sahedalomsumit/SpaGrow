@@ -83,6 +83,33 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
+  const scrollToSection = (e, href) => {
+    e.preventDefault();
+    setIsOpen(false);
+
+    const targetId = href.replace("#", "");
+    const element = document.getElementById(targetId);
+
+    if (element) {
+      // Small timeout to allow the menu to start closing and body overflow to reset
+      setTimeout(() => {
+        element.scrollIntoView({ behavior: "smooth" });
+      }, 50);
+    }
+  };
+
   const navLinks = [
     { name: "PROBLEM", href: "#problem" },
     { name: "SOLUTION", href: "#solution" },
@@ -151,9 +178,10 @@ const Header = () => {
         <div style={{ display: "flex", alignItems: "center", gap: "32px" }}>
           <nav className="desktop-nav" style={{ display: "flex", gap: "32px" }}>
             {navLinks.map((link) => (
-              <a
+                <a
                 key={link.name}
                 href={link.href}
+                onClick={(e) => scrollToSection(e, link.href)}
                 className={`nav-link ${
                   activeSection === link.href.substring(1) ? "active" : ""
                 }`}
@@ -216,10 +244,7 @@ const Header = () => {
                   className={`nav-link ${
                     activeSection === link.href.substring(1) ? "active" : ""
                   }`}
-                  onClick={() => {
-                    // Use a tiny delay to ensure the browser captures the click before the menu starts closing
-                    setTimeout(() => setIsOpen(false), 10);
-                  }}
+                  onClick={(e) => scrollToSection(e, link.href)}
                   style={{ fontSize: "1.2rem", width: "100%", display: "block" }}
                 >
                   {link.name}
